@@ -1,5 +1,5 @@
 ---
-description: How to call AWS APIs and Resources Using Tokens
+description: How to call AWS Service APIs Securely Using Tokens
 toc: true
 topics:
   - integrations
@@ -11,11 +11,11 @@ useCase:
   - integrate-third-party-apps
   - integrate-saas-sso
 ---
-# Call AWS APIs and Resources Securely with Tokens
+# Call AWS Service APIs Securely Using Tokens
 
 <%= include('../../_includes/_uses-delegation') %>
 
-Auth0 integrates with the AWS Security Token Service (STS) to obtain an limited-privilege credentials for AWS Identity and Access Management (IAM) users or for users that you authenticate (federated users). These credentials can then be used to call the AWS API of any Auth0-supported [identity provider](/identityproviders).
+Auth0 integrates with the AWS Security Token Service (STS) to obtain limited-privilege credentials for AWS Identity and Access Management (IAM) users or for users that you authenticate (federated users). These credentials can then be used to call the AWS API of any Auth0-supported [identity provider](/identityproviders).
 
 ## Sample Configuration
 
@@ -117,7 +117,7 @@ function (user, context, callback) {
 }
 ```
 
-Optionally, you can set `context.addonConfiguration.aws.region` to target a specific AWS region. For example, `region: 'cn-north-1'` will direct requests to the Chinese north region. Temporary credentials from AWS GovCloud (US) and China (Beijing) can be used only in the region from which they originated.
+Optionally, you can set `context.addonConfiguration.aws.region` to target a specific AWS region. For example, `region: 'cn-north-1'` will direct requests to the China (Beijing) region. Temporary credentials from AWS GovCloud (US) and all AWS China regions can be used only in the region from which they originated.
 
 The `context.addonConfiguration.aws.mappings` variable allows you to specify parameters that are sent to AWS to assume a Role. By default, Auth0 will use these mappings:
 
